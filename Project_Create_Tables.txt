@@ -1,0 +1,97 @@
+CREATE TABLE PROFESSOR(
+    SSN numeric(9) NULL UNIQUE,
+    Pname varchar(50) NOT NULL,
+    Title varchar(50) NOT NULL,  
+    Sex enum('M','F'),
+    Salary decimal(10,2) NOT NULL,
+    Staddress int(50) NOT NULL,
+    City varchar(20) NOT NULL,  
+    State char(2) NOT NULL,  
+    Zipcode char(5) NOT NULL,
+    Areacode numeric(3) NOT NULL,
+    Phonenum numeric(7) NOT NULL,
+    PRIMARY KEY (SSN)   
+) ; 
+
+CREATE TABLE DEPARTMENT(
+    Deptnum int NOT NULL UNIQUE, 
+    Deptname varchar(15),
+    Telephone numeric(10),
+    Office_location varchar(15),
+    Chairperson numeric(9),
+    primary key (Deptnum),
+    foreign key (Chairperson) references PROFESSOR(SSN)
+);
+
+CREATE TABLE STUDENT(
+    CWID numeric(9) NOT NULL UNIQUE,
+    Fname varchar(20) NOT NULL,   
+    Lname varchar(20) NOT NULL,
+    Address varchar(20) NOT NULL,
+    Major_id int NOT NULL,
+    primary key(CWID),
+    foreign key(Major_id) references DEPARTMENT(Deptnum)
+   
+) ;
+
+CREATE TABLE COURSE(
+    Course_id   numeric(7) NOT NULL UNIQUE,
+    Title varchar(30) NOT NULL,
+    Textbook varchar(50),
+    Units tinyint NOT NULL,
+    Department int NOT NULL,
+    primary key (Course_id), 
+    foreign key (Department) references DEPARTMENT(Deptnum) 
+    
+);
+
+CREATE TABLE SECTION(
+    Section_id numeric(7) NOT NULL UNIQUE,
+    Course_id numeric(7) NOT NULL,
+    classroom varchar(15),
+    start_time DATE,
+    end_time DATE,
+    meeting_days varchar(10) NOT NULL,
+    num_seats int,
+    Instructor numeric(9) NOT NULL,
+    primary key (Section_id, Course_id),
+    foreign key (Course_id) references COURSE(Course_id),
+    foreign key (Instructor) references PROFESSOR(SSN)
+);
+CREATE TABLE PREREQUISITE(
+    Maincourse  numeric(7) NOT NULL,
+    Prereqcourse numeric(7) NOT NULL,
+    primary key (Maincourse,Prereqcourse),
+    foreign key (Maincourse) references COURSE(Course_id),
+    foreign key (Prereqcourse) references COURSE(Course_id)
+);
+
+CREATE TABLE MINOR_DEGREES(
+    Minor_CWID numeric(9) NOT NULL, 
+    Minor_Deptum int,
+    primary key (Minor_CWID, Minor_Deptum),
+    foreign key (Minor_CWID) references STUDENT(CWID),
+    foreign key (Minor_Deptum) references DEPARTMENT(Deptnum)    
+);
+
+CREATE TABLE PROFESSOR_DEGREES(
+    Pssn numeric(9) NOT NULL,
+    Degree varchar(15),
+    primary key (Pssn, Degree),
+    foreign key (Pssn) references PROFESSOR(SSN)
+   
+);
+
+CREATE TABLE ENROLL_RECORD(
+    Student_id  numeric(9) NOT NULL,
+    Section_id numeric(7) NOT NULL,
+    Course_id numeric(7) NOT NULL,
+    Grade enum('A', 'B', 'C', 'D', 'F', 'W'),
+    primary key (Student_id, Section_id, Course_id),
+    foreign key (Student_id) references STUDENT(CWID),
+    foreign key (Section_id) references SECTION(Section_id),
+    foreign key (Course_id) references SECTION(Course_id)
+);
+
+
+

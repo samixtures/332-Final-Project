@@ -1,0 +1,14 @@
+--insert professor values
+-- insert into PROFESSOR values (SSN ,Pname , Title ,Sex ,Salary ,Staddress ,City ,State ,Zipcode ,Areacode,Phonenum ) 
+insert into PROFESSOR values(600000000, 'Michael Scott', 'Instructor1','M',50000,123, 'Circle Dr','CA', '92612',714,4000000 );
+insert into PROFESSOR values(600000001, 'Dwight Shrute', 'Instructor2','M',55000,456, 'Circle St','CA', '92626',714,5000000 );
+insert into PROFESSOR values(600000002, 'Michael Wallace', 'Instructor3','M',60000,789, 'Circle lane','CA', '92602',714,6000000 );
+
+--insert department values
+-- insert into DEPARTMENT values(Deptnum, Deptname,Telephone,Office_location,Chairperson
+insert into DEPARTMENT values(1,'CS', 7149000000, 'CS-100',600000000);
+insert into DEPARTMENT values(2,'MATH', 7149000001,'MATH-100',600000001);
+
+--insert student values
+-- insert into STUDENT values(CWID , Fname ,Lname ,Address ,Major_id);
+insert into STUDENT values(1 , 'Jim', 'Halpert' , '123 street' ,Major_id);
