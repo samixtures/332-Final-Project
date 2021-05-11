@@ -11,14 +11,14 @@ insert into DEPARTMENT values(2,'MATH', 7149000001,'MATH-100',600000001);
 
 /* REQUIREMENT: 8 students*/
 -- insert into STUDENT values(CWID , Fname ,Lname ,Address ,Major_id);
-insert into STUDENT values(100000000 , 'Jim', 'Halpert', '1 street' ,1);
-insert into STUDENT values(100000001 , 'Pam', 'Beesly' , '2 street' ,1);
-insert into STUDENT values(100000002 , 'Kevin', 'Malone' ,'3 street' ,1);
-insert into STUDENT values(100000003 , 'Andy', 'Dwyer' ,'4 street' ,1);
-insert into STUDENT values(100000004 , 'Oscar', 'Nunez' ,'5 street' ,2);
-insert into STUDENT values(100000005 , 'Ryan', 'Howard' ,'6 street' ,2);
-insert into STUDENT values(100000006 , 'Angela','Martin' ,'7 street' ,2);
-insert into STUDENT values(100000007 , 'Stanley','Hudson' ,'8 street' ,2);
+insert into STUDENT values(1000 , 'Jim', 'Halpert', '1 street' ,1);
+insert into STUDENT values(1001 , 'Pam', 'Beesly' , '2 street' ,1);
+insert into STUDENT values(1002 , 'Kevin', 'Malone' ,'3 street' ,1);
+insert into STUDENT values(1003 , 'Andy', 'Dwyer' ,'4 street' ,1);
+insert into STUDENT values(1004 , 'Oscar', 'Nunez' ,'5 street' ,2);
+insert into STUDENT values(1005 , 'Ryan', 'Howard' ,'6 street' ,2);
+insert into STUDENT values(1006 , 'Angela','Martin' ,'7 street' ,2);
+insert into STUDENT values(1007 , 'Stanley','Hudson' ,'8 street' ,2);
 
 /* REQUIREMENT: 4 courses*/
 -- insert into COURSE values(Course_id, Title,Textbook ,Units ,Department);
@@ -32,12 +32,51 @@ insert into COURSE values(14001 , 'Calculus 2', 'Calc 2 For Dummies', 3 ,2);
 -- insert into SECTION values(Section_id , Course_id ,classroom  ,start_time ,end_time, meeting_days, num_seats,Instructor );
 insert into SECTION values(1 , 13000, 'LAB-01', '12:00' ,'13:00','MW',30,600000000);
 insert into SECTION values(2 , 13000, 'LAB-02', '14:00' ,'15:00','MW',30,600000001);
-insert into SECTION values(3 , 13001, 'LAB-03', '8:00' ,'9:00','TTH',30,600000001);
-insert into SECTION values(5 , 13002, 'LAB-04', '7:00' ,'8:00','TTH',30,600000000);
-insert into SECTION values(6 , 14000, 'LAB-05', '16:00' ,'17:00','F',30,600000002);
-insert into SECTION values(4 , 14001, 'LAB-06', '14:00' ,'15:00','F',30,600000002);
+insert into SECTION values(1 , 13001, 'LAB-03', '1:00' ,'2:00','TTH',30,600000001);
+insert into SECTION values(2 , 13001, 'LAB-04', '4:00' ,'5:00','MW',30,600000001);
+insert into SECTION values(3 , 13001, 'LAB-05', '8:00' ,'9:00','TTH',30,600000001);
+insert into SECTION values(1 , 13002, 'LAB-06', '7:00' ,'8:00','TTH',30,600000000);
+insert into SECTION values(2 , 13002, 'LAB-06', '10:00' ,'11:00','TTH',30,600000002);
+insert into SECTION values(1 , 14000, 'LAB-07', '16:00' ,'17:00','F',30,600000002);
+insert into SECTION values(1 , 14001, 'LAB-08', '14:00' ,'15:00','F',30,600000002);
 
 /* REQUIREMENT: 20 Enrollment Records*/
 -- insert into ENROLL_RECORD values(Student_id , Section_id ,Course_id  ,Grade);
-insert into ENROLL_RECORD values(100000000 , 1, 13000, 'A');
-insert into ENROLL_RECORD values(100000000 , 3, 13001, 'B');
+insert into ENROLL_RECORD values(1000 , 1, 13000, 'A');
+insert into ENROLL_RECORD values(1000 , 1, 13001, 'B');
+insert into ENROLL_RECORD values(1000 , 1, 13002, 'B');
+insert into ENROLL_RECORD values(1000 , 1, 14000, 'B');
+insert into ENROLL_RECORD values(1000 , 1, 14001, 'B');
+insert into ENROLL_RECORD values(1001 , 2, 13000, 'A');
+insert into ENROLL_RECORD values(1001 , 2, 13001, 'A-');
+insert into ENROLL_RECORD values(1001 , 2, 13002, 'A');
+insert into ENROLL_RECORD values(1001 , 1, 14000, 'B');
+insert into ENROLL_RECORD values(1002 , 1, 13000, 'F');
+insert into ENROLL_RECORD values(1002 , 3, 13001, 'D-');
+insert into ENROLL_RECORD values(1002 , 1, 13002, 'D'); 
+insert into ENROLL_RECORD values(1003 , 2, 13002, 'D'); 
+insert into ENROLL_RECORD values(1003 , 1, 14000, 'B+');
+insert into ENROLL_RECORD values(1003 , 1, 14001, 'B');
+insert into ENROLL_RECORD values(1004 , 1, 13000, 'C+');
+insert into ENROLL_RECORD values(1005 , 1, 14001, 'B');
+insert into ENROLL_RECORD values(1006 , 2, 13000, 'A');
+insert into ENROLL_RECORD values(1007 , 2, 13002, 'B');
+insert into ENROLL_RECORD values(1007 , 3, 13001, 'A');
+
+/* MINOR_DEGREES */
+insert into MINOR_DEGREES values(1000 , 2);
+insert into MINOR_DEGREES values(1001 , 2);
+insert into MINOR_DEGREES values(1004 , 1);
+
+/* PROFESSOR_DEGREES */
+insert into PROFESSOR_DEGREES values(600000000 , 'CS');
+insert into PROFESSOR_DEGREES values(600000000 , 'Mathematics');
+insert into PROFESSOR_DEGREES values(600000001 , 'Mathematics');
+insert into PROFESSOR_DEGREES values(600000002 , 'CS');
+
+/* PREREQUISITE*/       
+insert into PREREQUISITE values(13001 , 13000);
+insert into PREREQUISITE values(14001 , 14000);
+
+        
+

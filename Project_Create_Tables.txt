@@ -1,10 +1,10 @@
 CREATE TABLE PROFESSOR(
-    SSN numeric(9) NULL UNIQUE,
+    SSN numeric(9) NOT NULL UNIQUE,
     Pname varchar(50) NOT NULL,
     Title varchar(50) NOT NULL,  
     Sex enum('M','F'),
     Salary decimal(10,2) NOT NULL,
-    Staddress varchar(20) NOT NULL,
+    Staddress int(50) NOT NULL,
     City varchar(20) NOT NULL,  
     State char(2) NOT NULL,  
     Zipcode char(5) NOT NULL,
@@ -28,10 +28,12 @@ CREATE TABLE STUDENT(
     Fname varchar(20) NOT NULL,   
     Lname varchar(20) NOT NULL,
     Address varchar(20) NOT NULL,
+    Telephone numeric(10),
     Major_id int NOT NULL,
     primary key(CWID),
     foreign key(Major_id) references DEPARTMENT(Deptnum)
-   
+   /*major_id  
+    constraint foreign key(major_id) references DEPARTMENT(Book_id) */
 ) ;
 
 CREATE TABLE COURSE(
@@ -46,10 +48,10 @@ CREATE TABLE COURSE(
 );
 
 CREATE TABLE SECTION(
-    Section_id numeric(7) NOT NULL UNIQUE,
+    Section_id numeric(7) NOT NULL,
     Course_id numeric(7) NOT NULL,
     classroom varchar(15),
-    start_time TIME
+    start_time TIME,
     end_time TIME,
     meeting_days varchar(10) NOT NULL,
     num_seats int,
