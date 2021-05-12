@@ -3,23 +3,23 @@
 insert into PROFESSOR values(600000000, 'Michael Scott',   'Instructor1','M',50000,'123 Circle Dr','Irvine','CA', '92612',714,4000000 );
 insert into PROFESSOR values(600000001, 'Dwight Shrute',   'Instructor2','M',55000,'456 Circle St', 'Costa mesa','CA', '92626',714,5000000 );
 insert into PROFESSOR values(600000002, 'Michael Wallace', 'Instructor3','M',60000,'789 Circle lane','Irvine','CA', '92602',714,6000000 );
-
+select * from PROFESSOR;
 /* REQUIREMENT: 2 departments*/
 -- insert into DEPARTMENT values(Deptnum, Deptname,Telephone,Office_location,Chairperson
 insert into DEPARTMENT values(1,'CS',   7149000000, 'CS-100',600000000);
 insert into DEPARTMENT values(2,'MATH', 7149000001,'MATH-100',600000001);
-
+select * from DEPARTMENT;
 /* REQUIREMENT: 8 students*/
 -- insert into STUDENT values(CWID , Fname ,Lname ,Address ,Major_id);
-insert into STUDENT values(1000 , 'Jim', 'Halpert', '1 street' ,1);
-insert into STUDENT values(1001 , 'Pam', 'Beesly' , '2 street' ,1);
-insert into STUDENT values(1002 , 'Kevin', 'Malone' ,'3 street' ,1);
-insert into STUDENT values(1003 , 'Andy', 'Dwyer' ,'4 street' ,1);
-insert into STUDENT values(1004 , 'Oscar', 'Nunez' ,'5 street' ,2);
-insert into STUDENT values(1005 , 'Ryan', 'Howard' ,'6 street' ,2);
-insert into STUDENT values(1006 , 'Angela','Martin' ,'7 street' ,2);
-insert into STUDENT values(1007 , 'Stanley','Hudson' ,'8 street' ,2);
-
+insert into STUDENT values(1000 , 'Jim', 'Halpert', '1 street' ,7146000000,1);
+insert into STUDENT values(1001 , 'Pam', 'Beesly' , '2 street' ,7146111111,1);
+insert into STUDENT values(1002 , 'Kevin', 'Malone' ,'3 street' , 7146222222,1);
+insert into STUDENT values(1003 , 'Andy', 'Dwyer' ,'4 street' , 7146333333,1);
+insert into STUDENT values(1004 , 'Oscar', 'Nunez' ,'5 street' , 7146444444,2);
+insert into STUDENT values(1005 , 'Ryan', 'Howard' ,'6 street' , 7146555555,2);
+insert into STUDENT values(1006 , 'Angela','Martin' ,'7 street' , 7146666666,2);
+insert into STUDENT values(1007 , 'Stanley','Hudson' ,'8 street' , 7146777777,2);
+select * from STUDENT;
 /* REQUIREMENT: 4 courses*/
 -- insert into COURSE values(Course_id, Title,Textbook ,Units ,Department);
 insert into COURSE values(13000 , 'C++ Programming', 'C++ For Dummies', 3 ,1);
@@ -27,7 +27,7 @@ insert into COURSE values(13001 , 'Data Structures', 'Data Structures For Dummie
 insert into COURSE values(13002 , 'Database Systems', 'Database Systems For Dummies', 3 ,1);
 insert into COURSE values(14000 , 'Calculus 1', 'Calc 1 For Dummies', 3 ,2);
 insert into COURSE values(14001 , 'Calculus 2', 'Calc 2 For Dummies', 3 ,2);
-
+select * from COURSE;
 /* REQUIREMENT: 6 sections*/
 -- insert into SECTION values(Section_id , Course_id ,classroom  ,start_time ,end_time, meeting_days, num_seats,Instructor );
 insert into SECTION values(1 , 13000, 'LAB-01', '12:00' ,'13:00','MW',30,600000000);
@@ -39,7 +39,7 @@ insert into SECTION values(1 , 13002, 'LAB-06', '7:00' ,'8:00','TTH',30,60000000
 insert into SECTION values(2 , 13002, 'LAB-06', '10:00' ,'11:00','TTH',30,600000002);
 insert into SECTION values(1 , 14000, 'LAB-07', '16:00' ,'17:00','F',30,600000002);
 insert into SECTION values(1 , 14001, 'LAB-08', '14:00' ,'15:00','F',30,600000002);
-
+select * from SECTION;
 /* REQUIREMENT: 20 Enrollment Records*/
 -- insert into ENROLL_RECORD values(Student_id , Section_id ,Course_id  ,Grade);
 insert into ENROLL_RECORD values(1000 , 1, 13000, 'A');
@@ -62,21 +62,24 @@ insert into ENROLL_RECORD values(1005 , 1, 14001, 'B');
 insert into ENROLL_RECORD values(1006 , 2, 13000, 'A');
 insert into ENROLL_RECORD values(1007 , 2, 13002, 'B');
 insert into ENROLL_RECORD values(1007 , 3, 13001, 'A');
+select * from ENROLL_RECORD;
 
 /* MINOR_DEGREES */
 insert into MINOR_DEGREES values(1000 , 2);
 insert into MINOR_DEGREES values(1001 , 2);
 insert into MINOR_DEGREES values(1004 , 1);
+select * from MINOR_DEGREES;
 
 /* PROFESSOR_DEGREES */
 insert into PROFESSOR_DEGREES values(600000000 , 'CS');
 insert into PROFESSOR_DEGREES values(600000000 , 'Mathematics');
 insert into PROFESSOR_DEGREES values(600000001 , 'Mathematics');
 insert into PROFESSOR_DEGREES values(600000002 , 'CS');
+select * from PROFESSOR_DEGREES;
 
 /* PREREQUISITE*/       
 insert into PREREQUISITE values(13001 , 13000);
 insert into PREREQUISITE values(14001 , 14000);
-
+select * from PREREQUISITE;
         
 

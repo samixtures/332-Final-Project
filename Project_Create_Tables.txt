@@ -1,10 +1,10 @@
 CREATE TABLE PROFESSOR(
-    SSN numeric(9) NOT NULL UNIQUE,
+    SSN numeric(9) NOT NULL,
     Pname varchar(50) NOT NULL,
     Title varchar(50) NOT NULL,  
     Sex enum('M','F'),
     Salary decimal(10,2) NOT NULL,
-    Staddress int(50) NOT NULL,
+    Staddress varchar(20) NOT NULL,
     City varchar(20) NOT NULL,  
     State char(2) NOT NULL,  
     Zipcode char(5) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE PROFESSOR(
 ) ; 
 
 CREATE TABLE DEPARTMENT(
-    Deptnum int NOT NULL UNIQUE, 
+    Deptnum int NOT NULL, 
     Deptname varchar(15),
     Telephone numeric(10),
     Office_location varchar(15),
@@ -24,7 +24,7 @@ CREATE TABLE DEPARTMENT(
 );
 
 CREATE TABLE STUDENT(
-    CWID numeric(9) NOT NULL UNIQUE,
+    CWID numeric(9) NOT NULL,
     Fname varchar(20) NOT NULL,   
     Lname varchar(20) NOT NULL,
     Address varchar(20) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE STUDENT(
 ) ;
 
 CREATE TABLE COURSE(
-    Course_id   numeric(7) NOT NULL UNIQUE,
+    Course_id   numeric(7) NOT NULL,
     Title varchar(30) NOT NULL,
     Textbook varchar(50),
     Units tinyint NOT NULL,
@@ -85,12 +85,12 @@ CREATE TABLE PROFESSOR_DEGREES(
 );
 
 CREATE TABLE ENROLL_RECORD(
-    Student_id  numeric(9) NOT NULL,
+    CWID  numeric(9) NOT NULL,
     Section_id numeric(7) NOT NULL,
     Course_id numeric(7) NOT NULL,
     Grade enum('A', 'A-','B+','B','B-','C+','C','C-','D+','D','D-','F'),
-    primary key (Student_id, Section_id, Course_id),
-    foreign key (Student_id) references STUDENT(CWID),
+    primary key (CWID, Section_id, Course_id),
+    foreign key (CWID) references STUDENT(CWID),
     foreign key (Section_id) references SECTION(Section_id),
     foreign key (Course_id) references SECTION(Course_id)
 );
