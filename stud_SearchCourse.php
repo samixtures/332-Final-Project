@@ -16,8 +16,8 @@
 		die('Could not connect: ' . $link->connect_error);
 	}
 				
-	// 1a Given the social security number of a professor, list the titles, classrooms,
-	// meeting days and time of his/her classes. */
+	// 2a. Given a course number list the sections of the course, 
+	//including the classrooms, the meeting days and time, and the number of students enrolled in each section.
 	
 	$query="SELECT S.Section_id, classroom, meeting_days, start_time, end_time, Count(E.CWID)
 			FROM COURSE C, ENROLL_RECORD E, SECTION S
