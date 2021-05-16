@@ -11,7 +11,7 @@ CREATE TABLE PROFESSOR(
     Areacode numeric(3) NOT NULL,
     Phonenum numeric(7) NOT NULL,
     PRIMARY KEY (SSN)   
-) ; 
+); 
 
 CREATE TABLE DEPARTMENT(
     Deptnum int NOT NULL, 
@@ -43,8 +43,7 @@ CREATE TABLE COURSE(
     Units tinyint NOT NULL,
     Department int NOT NULL,
     primary key (Course_id), 
-    foreign key (Department) references DEPARTMENT(Deptnum) 
-    
+    foreign key (Department) references DEPARTMENT(Deptnum)     
 );
 
 CREATE TABLE SECTION(

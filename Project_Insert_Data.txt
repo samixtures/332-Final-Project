@@ -58,10 +58,13 @@ insert into ENROLL_RECORD values(1003 , 2, 13002, 'D');
 insert into ENROLL_RECORD values(1003 , 1, 14000, 'B+');
 insert into ENROLL_RECORD values(1003 , 1, 14001, 'B');
 insert into ENROLL_RECORD values(1004 , 1, 13000, 'C+');
+insert into ENROLL_RECORD values(1005 , 1, 13001, 'D-');
 insert into ENROLL_RECORD values(1005 , 1, 14001, 'B');
 insert into ENROLL_RECORD values(1006 , 2, 13000, 'A');
+insert into ENROLL_RECORD values(1006 , 2, 13001, 'A');
 insert into ENROLL_RECORD values(1007 , 2, 13002, 'B');
 insert into ENROLL_RECORD values(1007 , 3, 13001, 'A');
+insert into ENROLL_RECORD values(1007 , 1, 13002, 'C');
 select * from ENROLL_RECORD;
 
 /* MINOR_DEGREES */

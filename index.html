@@ -1,0 +1,32 @@
+<html>
+<body>
+<h1>CPSC 332  Term Project</h1>
+<h2>University Database </h2>
+
+<h3>Professor Search</h3>
+<form action="prof_SearchSSN.php" method="post">
+    SSN:  <input type="text" name="SSN" /><br><br>
+<input type="submit" name="submit" value="Search courses by SSN" />
+</form><br>
+
+<form action="prof_SearchGrade.php" method="post">
+    Course ID:  <input type="text" name="cid" /><br><br>
+    Section ID:  <input type="text" name="sid" /><br><br>
+<input type="submit" name="submit" value="Search classes by course id and section id" />
+</form><br>
+
+<h3>Student Search</h3>
+<form action="stud_SearchCourse.php" method="post">
+    Course ID:  <input type="text" name="cid" /><br><br>   
+<input type="submit" name="submit" value="Search sections by course id" />
+</form><br>
+
+<form action="stud_SearchCWID.php" method="post">
+    CWID:  <input type="text" name="cwid" /><br><br>   
+<input type="submit" name="submit" value="Search courses taken by student" />
+</form><br>
+
+</body>
+</html>
+
+
